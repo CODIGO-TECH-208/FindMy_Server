@@ -1,0 +1,62 @@
+### FindMy Auth API Tests
+
+@baseUrl = http://localhost:5000/api/auth
+
+### 1. Register User
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "studentId": "10987654",
+  "email": "john@ug.edu.gh",
+  "name": "John Doe",
+  "password": "Password123",
+  "phoneNumber": "0244123456"
+}
+
+### 2. Verify OTP
+# Replace 'token' with the token received from Register and 'otp' with the code from email
+POST {{baseUrl}}/verify-otp
+Content-Type: application/json
+
+{
+  "token": "YOUR_SIGNUP_TOKEN_HERE",
+  "otp": "123456"
+}
+
+### 3. Resend OTP
+# Replace 'token' with the token received from Register
+POST {{baseUrl}}/resend-otp
+Content-Type: application/json
+
+{
+  "token": "YOUR_SIGNUP_TOKEN_HERE"
+}
+
+### 4. Login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "john@ug.edu.gh",
+  "password": "Password123"
+}
+
+### 5. Forgot Password
+POST {{baseUrl}}/forgot-password
+Content-Type: application/json
+
+{
+  "email": "john@ug.edu.gh"
+}
+
+### 6. Reset Password
+# Replace 'token' with the token received from Forgot Password and 'otp' with the code from email
+POST {{baseUrl}}/reset-password
+Content-Type: application/json
+
+{
+  "token": "YOUR_RESET_TOKEN_HERE",
+  "otp": "123456",
+  "newPassword": "NewPassword123"
+}
