@@ -1,6 +1,6 @@
-# FindMy Backend - Lost and Found Platform
+# FindMy Backend  And System Architecture
 
-## Overview
+# Overview
 
 This is the backend server for **FindMy**, a lost and found platform for University of Ghana students. Users can report lost items, post found items, and connect with each other to recover belongings.
 
@@ -19,7 +19,7 @@ This is the backend server for **FindMy**, a lost and found platform for Univers
 
 ---
 
-Project Structure (Simplified)
+## Project Structure 
 
 ```
 ├── src/
