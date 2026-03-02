@@ -19,10 +19,11 @@ This is the backend server for **FindMy**, a lost and found platform for Univers
 
 ---
 
-## Project Structure (Simplified)
+Project Structure (Simplified)
 
 ```
 ├── src/
+│   ├── apiTests/        # test scenareos for APIs
 │   ├── config/          # Database config
 │   ├── controllers/     # Request handlers
 │   ├── models/          # Database models
@@ -31,7 +32,7 @@ This is the backend server for **FindMy**, a lost and found platform for Univers
 │   ├── services/        # External services
 │   ├── utils/           # Helpers, email
 │   └── server.js        # Entry point
-├── docs/                # Documentation
+├── docs/                # Documentation (comming soon)
 ├── .env
 └── package.json
 ```
@@ -68,11 +69,11 @@ npm run dev
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/findmy
+MONGODB_URI=mongodb+srv://vkpinto1234_db_user:Hesoyam.m0ng0@cluster0.uyd0fal.mongodb.net/?appName=Cluster0
 JWT_SECRET=your-secret-key
 JWT_EXPIRES_IN=24h
-EMAIL_USER=
-EMAIL_PASS=
+EMAIL_USER="Zentech2099@gmail.com"
+EMAIL_PASS="yrbl gpzh rqeb remh"
 
 ```
 
@@ -243,7 +244,7 @@ We use Nodemailer for all email notifications. Emails are sent for:
 
 ## Sample API Calls
 
-........
+Use the AuthTests.rest file in the apiTests folder to preview and demo the endpoints (requests stucture and responce structure)
 
 ---
 

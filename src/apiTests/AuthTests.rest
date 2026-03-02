@@ -3,15 +3,16 @@
 @baseUrl = http://localhost:5000/api/auth
 
 ### 1. Register User
+## use valid email for real results
 POST {{baseUrl}}/register
 Content-Type: application/json
 
 {
-  "studentId": "10987654",
-  "email": "john@ug.edu.gh",
-  "name": "John Doe",
-  "password": "Password123",
-  "phoneNumber": "0244123456"
+  "studentId": "",
+  "email": "",
+  "name": "",
+  "password": "",
+  "phoneNumber": ""
 }
 
 ### 2. Verify OTP
@@ -20,8 +21,8 @@ POST {{baseUrl}}/verify-otp
 Content-Type: application/json
 
 {
-  "token": "YOUR_SIGNUP_TOKEN_HERE",
-  "otp": "123456"
+  "token": "",
+  "otp": ""
 }
 
 ### 3. Resend OTP
@@ -30,7 +31,7 @@ POST {{baseUrl}}/resend-otp
 Content-Type: application/json
 
 {
-  "token": "YOUR_SIGNUP_TOKEN_HERE"
+  "token": "token"
 }
 
 ### 4. Login
@@ -38,8 +39,8 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-  "email": "john@ug.edu.gh",
-  "password": "Password123"
+  "email": "",
+  "password": ""
 }
 
 ### 5. Forgot Password
@@ -47,7 +48,7 @@ POST {{baseUrl}}/forgot-password
 Content-Type: application/json
 
 {
-  "email": "john@ug.edu.gh"
+  "email": ""
 }
 
 ### 6. Reset Password
@@ -56,7 +57,7 @@ POST {{baseUrl}}/reset-password
 Content-Type: application/json
 
 {
-  "token": "YOUR_RESET_TOKEN_HERE",
-  "otp": "123456",
-  "newPassword": "NewPassword123"
+  "token": "token",
+  "otp": "",
+  "newPassword": ""
 }
