@@ -69,7 +69,7 @@ npm run dev
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb+srv://vkpinto1234_db_user:Hesoyam.m0ng0@cluster0.uyd0fal.mongodb.net/?appName=Cluster0
+MONGODB_URI=mongodb+srv:<your mongo URI goes here>
 JWT_SECRET=your-secret-key
 JWT_EXPIRES_IN=24h
 EMAIL_USER="Zentech2099@gmail.com"
