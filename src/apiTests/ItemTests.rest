@@ -1,0 +1,65 @@
+### FindMy Items API Tests
+
+@baseUrl = http://localhost:5000/api/items
+@authToken = Bearer token
+
+### 1. Get All Items
+GET {{baseUrl}}
+
+### 2. Get All Items (with filters)
+GET {{baseUrl}}?type=lost&category=Phones&status=active
+
+### 3. Search Items
+GET {{baseUrl}}/search?q=phone
+
+### 4. Get Single Item
+# Replace ':id' with a valid item ID
+GET {{baseUrl}}/:id
+
+### 5. Post New Item
+# Replace 'token' with a valid JWT from login
+POST {{baseUrl}}
+Content-Type: application/json
+Authorization: {{authToken}}
+
+{
+  "title": "Lost iPhone 15",
+  "type": "lost",
+  "category": "Phones",
+  "description": "Black iPhone 15 Pro Max lost near Balme Library",
+  "date": "2026-03-25",
+  "location": "Balme Library",
+  "locationDetails": "Near the entrance on the second floor",
+  "rewardOffered": true
+}
+
+### 6. Edit Item
+# Replace ':id' with the item ID and 'token' with a valid JWT
+PUT {{baseUrl}}/:id
+Content-Type: application/json
+Authorization: {{authToken}}
+
+{
+  "title": "Lost iPhone 15 Pro Max (Updated)",
+  "description": "Black iPhone 15 Pro Max lost near Balme Library entrance",
+  "status": "active"
+}
+
+### 7. Delete Item
+# Replace ':id' with the item ID and 'token' with a valid JWT
+DELETE {{baseUrl}}/:id
+Authorization: {{authToken}}
+
+### 8. Upload Item Images
+# Replace ':id' with the item ID and 'token' with a valid JWT
+# Use form-data with key 'images' and select image files
+POST {{baseUrl}}/:id/images
+Authorization: {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="images"; filename="test.jpg"
+Content-Type: image/jpeg
+
+< ./test.jpg
+--boundary--

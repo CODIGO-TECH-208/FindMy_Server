@@ -17,9 +17,11 @@ app.get('/', (req, res) => {
 
 // Import Routes
 import authRoutes from './routes/auth.js';
+import itemRoutes from './routes/items.js';
 
 // Use Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/items', itemRoutes);
 
 // Start server
 const PORT = process.env.PORT || 3000;

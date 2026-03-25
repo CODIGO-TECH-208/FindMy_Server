@@ -5,8 +5,10 @@ import {
   resendOTP,
   loginUser,
   forgotPassword,
-  resetPassword
+  resetPassword,
+  logoutUser
 } from '../controllers/auth.js';
+import { verifyToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -33,5 +35,9 @@ router.post('/forgot-password', forgotPassword);
 // @route   POST /api/auth/reset-password
 // @desc    Reset password using OTP
 router.post('/reset-password', resetPassword);
+
+// @route   POST /api/auth/logout
+// @desc    Logout user
+router.post('/logout', verifyToken, logoutUser);
 
 export default router;

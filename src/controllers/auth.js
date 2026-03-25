@@ -251,3 +251,16 @@ export const resetPassword = async (req, res) => {
     return res.status(401).json({ message: "Invalid or expired token." });
   }
 };
+
+// logout
+export const logoutUser = async (req, res) => {
+  try {
+    return res.status(200).json({
+      message: "Logout successful."
+    });
+
+  } catch (error) {
+    console.error("Logout error:", error);
+    return res.status(500).json({ message: "Internal server error." });
+  }
+};

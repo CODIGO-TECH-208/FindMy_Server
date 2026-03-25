@@ -61,3 +61,9 @@ Content-Type: application/json
   "otp": "",
   "newPassword": ""
 }
+
+### 7. Logout
+# Replace 'token' with the token received from Login
+POST {{baseUrl}}/logout
+Content-Type: application/json
+Authorization: Bearer token

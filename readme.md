@@ -19,7 +19,7 @@ This is the backend server for **FindMy**, a lost and found platform for Univers
 
 ---
 
-## Project Structure 
+## Project Structure
 
 ```
 ├── src/
@@ -179,6 +179,7 @@ EMAIL_PASS="yrbl gpzh rqeb remh"
 | POST   | `/api/auth/login`           | Login                  |
 | POST   | `/api/auth/forgot-password` | Request password reset |
 | POST   | `/api/auth/reset-password/` | Reset password         |
+| POST   | `/api/auth/logout/`         | Logout                 |
 
 ### Items
 
