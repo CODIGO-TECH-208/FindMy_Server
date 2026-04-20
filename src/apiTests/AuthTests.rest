@@ -1,18 +1,19 @@
 ### FindMy Auth API Tests
 
 @baseUrl = http://localhost:5000/api/auth
+@prodctionUrl = https://findmy-server.onrender.com/api/auth
 
 ### 1. Register User
 ## use valid email for real results
-POST {{baseUrl}}/register
+POST {{prodctionUrl}}/register
 Content-Type: application/json
 
 {
-  "studentId": "",
-  "email": "",
-  "name": "",
-  "password": "",
-  "phoneNumber": ""
+  "studentId": "22182381",
+  "email": "vkpinto1234@gamil.com",
+  "name": "Victor Pinto",
+  "password": "1234567890",
+  "phoneNumber": "0112233445"
 }
 
 ### 2. Verify OTP

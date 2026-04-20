@@ -1,0 +1,39 @@
+### Claims API Tests
+# Run these tests in sequence after creating an item. Make sure to replace tokens and IDs.
+
+@baseUrl = http://localhost:10000/api
+@ownerToken = your_owner_jwt_token_here
+@claimantToken = your_claimant_jwt_token_here
+@itemId = item_id_here
+@claimId = claim_id_here
+
+###
+# 1. Submit a claim (Run as claimant)
+POST {{baseUrl}}/claims
+Authorization: Bearer {{claimantToken}}
+Content-Type: application/json
+
+{
+  "itemId": "{{itemId}}",
+  "reason": "This is my missing ID card. The picture matches me and it has my student ID number on it."
+}
+
+###
+# 2. Get my claims (Run as claimant)
+GET {{baseUrl}}/claims/my-claims
+Authorization: Bearer {{claimantToken}}
+
+###
+# 3. Get received claims (Run as owner)
+GET {{baseUrl}}/claims/received
+Authorization: Bearer {{ownerToken}}
+
+###
+# 4. Accept a claim (Run as owner)
+PUT {{baseUrl}}/claims/{{claimId}}/accept
+Authorization: Bearer {{ownerToken}}
+
+###
+# 5. Reject a claim (Run as owner)
+PUT {{baseUrl}}/claims/{{claimId}}/reject
+Authorization: Bearer {{ownerToken}}

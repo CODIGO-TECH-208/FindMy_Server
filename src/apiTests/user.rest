@@ -1,0 +1,39 @@
+### User Profile & Notifications API Tests
+# Set the userToken
+
+@baseUrl = http://localhost:10000/api
+@userToken = your_user_jwt_token_here
+
+###
+# 1. Get User Profile
+GET {{baseUrl}}/user/profile
+Authorization: Bearer {{userToken}}
+
+###
+# 2. Update User Profile
+PUT {{baseUrl}}/user/profile
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "phoneNumber": "1234567890"
+}
+
+###
+# 3. Update User Profile Picture (Requires multipart/form-data via Rest Client)
+PUT {{baseUrl}}/user/profile
+Authorization: Bearer {{userToken}}
+Content-Type: multipart/form-data; boundary=ProfilePictureBoundary
+
+--ProfilePictureBoundary
+Content-Disposition: form-data; name="profilePicture"; filename="avatar.png"
+Content-Type: image/png
+
+< ./avatar.png
+--ProfilePictureBoundary--
+
+###
+# 4. Get User Notifications
+GET {{baseUrl}}/user/notifications
+Authorization: Bearer {{userToken}}

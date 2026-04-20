@@ -1,0 +1,43 @@
+### Chats & Messaging API Tests
+# Make sure to set the relevant variables for testing
+
+@baseUrl = http://localhost:10000/api
+@userToken = your_user_jwt_token_here
+@chatId = your_chat_id_here
+
+###
+# 1. Get my chats
+GET {{baseUrl}}/chats
+Authorization: Bearer {{userToken}}
+
+###
+# 2. Get chat messages
+GET {{baseUrl}}/chats/{{chatId}}/messages
+Authorization: Bearer {{userToken}}
+
+###
+# 3. Send text message
+POST {{baseUrl}}/chats/{{chatId}}/messages
+Authorization: Bearer {{userToken}}
+Content-Type: application/json
+
+{
+    "content": "Hello! I am ready to meet up for the found item."
+}
+
+###
+# 4. Send image message (Requires multipart/form-data upload via VSCode REST client or Postman)
+POST {{baseUrl}}/chats/{{chatId}}/messages/image
+Authorization: Bearer {{userToken}}
+Content-Type: multipart/form-data; boundary=MyAppBoundary
+
+--MyAppBoundary
+Content-Disposition: form-data; name="content"
+
+Here is proof
+--MyAppBoundary
+Content-Disposition: form-data; name="image"; filename="proof.jpg"
+Content-Type: image/jpeg
+
+< ./local-image.jpg
+--MyAppBoundary--
