@@ -68,12 +68,14 @@ npm run dev
 ## Environment Variables
 
 ```env
+NODE_ENV=development
 PORT=5000
 MONGODB_URI=mongodb+srv://vkpinto1234_db_user:Hesoyam.m0ng0@cluster0.uyd0fal.mongodb.net/?appName=Cluster0
-JWT_SECRET=your-secret-key
-JWT_EXPIRES_IN=24h
+JWT_SECRET=secret-key
+JWT_EXPIRE=24h
 EMAIL_USER="Zentech2099@gmail.com"
 EMAIL_PASS="yrbl gpzh rqeb remh"
+CLOUDINARY_URL=cloudinary://591534326352322:qMTC8u-i1dw9jlnR2HdeTjux2l4@dan6vxui8
 
 ```
 
